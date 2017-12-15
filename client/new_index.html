@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>Magic 8 Ball</title>
+
+    <!-- load utilities packages -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/eightball.css">
+    
+    <script>
+        $(document).ready(function() {
+            $("#button2").click(function() {
+                $.get("getAnswer", function(data, status) {
+                     $('#result').text(data.response);
+                });
+            });
+
+        });
+         $(document).ready(function() {
+            $("#button").click(function() {
+                $.get("getAnswer", function(data, status) {
+                     $('#result').text(data.response);
+                });
+            });
+
+        });
+         $(document).ready(function() {
+            $("#button3").click(function() {
+                $.get("getAnswer", function(data, status) {
+                     $('#result1').text(data.response);
+                });
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <h1 id="banner">Magic 8 Ball</h1>
+    
+    <div class="results centered_div">
+        <label id="result"></label>
+    </div>
+    <div class="results centered_div1">
+        <label id="result1"></label>
+    </div>
+    <div class="query">
+        <label>Ask a yes or no question:</label>
+        <input type="text" id="question" value="Ask the 8 Ball">
+        <br>
+        <button class="btn btn-primary" id="button">Ask Me!</button>
+        <button class="btn btn-secondary" id="button2">Ask me more!</button>
+        <br>
+        <button class="btn btn-primary" id="button3">Ask Me!</button>
+    </div>
+        
+</body>
+</html>
